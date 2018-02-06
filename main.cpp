@@ -32,11 +32,11 @@ float dt = 0.001f;
 //Called when a key is pressed
 void handleKeypress(unsigned char key, int x, int y) {
   switch (key) {
-    case 'r':
+    case 'r': // use 'r' to control order of the rectangles to be drawn in drawSceneAlpha()
       redFirst = !redFirst;
       glutPostRedisplay();
       break;
-    case 't':
+    case 't': // use 't' to control order of the transformations in drawTriangleWhite()
       rotateFirst = !rotateFirst;
       glutPostRedisplay();
       break;
@@ -196,7 +196,7 @@ void drawTriangleColored() {
   glScalef(0.1, 0.1, 0.1);
 
   glBegin(GL_TRIANGLES);
-  glColor3f(1.0, 0, 0);
+  glColor3f(1.0, 0, 0); // specify color for one vertex
   glVertex2f(-2.0, -1.0);
 
   glColor3f(0, 1.0, 0);
